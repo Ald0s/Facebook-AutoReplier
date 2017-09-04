@@ -1,0 +1,11 @@
+C:\Programming\C#\FacebookAutoReplier\FacebookAutoReplier\bin\Debug\FacebookAutoReplier.exe.config
+C:\Programming\C#\FacebookAutoReplier\FacebookAutoReplier\bin\Debug\FacebookAutoReplier.exe
+C:\Programming\C#\FacebookAutoReplier\FacebookAutoReplier\bin\Debug\FacebookAutoReplier.pdb
+C:\Programming\C#\FacebookAutoReplier\FacebookAutoReplier\bin\Debug\WebDriver.dll
+C:\Programming\C#\FacebookAutoReplier\FacebookAutoReplier\bin\Debug\WebDriver.xml
+C:\Programming\C#\FacebookAutoReplier\FacebookAutoReplier\obj\Debug\FacebookAutoReplier.csprojResolveAssemblyReference.cache
+C:\Programming\C#\FacebookAutoReplier\FacebookAutoReplier\obj\Debug\FacebookAutoReplier.csproj.CoreCompileInputs.cache
+C:\Programming\C#\FacebookAutoReplier\FacebookAutoReplier\obj\Debug\FacebookAutoReplier.exe
+C:\Programming\C#\FacebookAutoReplier\FacebookAutoReplier\obj\Debug\FacebookAutoReplier.pdb
+C:\Programming\C#\FacebookAutoReplier\FacebookAutoReplier\bin\Debug\WebDriver.Support.dll
+C:\Programming\C#\FacebookAutoReplier\FacebookAutoReplier\bin\Debug\WebDriver.Support.xml
