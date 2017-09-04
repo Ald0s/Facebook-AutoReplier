@@ -52,6 +52,7 @@ namespace AutoReplier {
 
             WriteSuccess("Found messages! ...");
 
+            // Now we can start taking control of the messages.
             chatController = new CChatController(chrome);
             return null;
         }

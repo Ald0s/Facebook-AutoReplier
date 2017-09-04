@@ -50,14 +50,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoReplier\Base\CBaseMessageWrapper.cs" />
+    <Compile Include="AutoReplier\Base\CBaseChatWrapper.cs" />
     <Compile Include="AutoReplier\Base\CBaseObject.cs" />
+    <Compile Include="AutoReplier\Base\CBaseReply.cs" />
     <Compile Include="AutoReplier\CAutoReplier.cs" />
     <Compile Include="AutoReplier\Base\CDebugWrapper.cs" />
     <Compile Include="AutoReplier\CConsoleDriven.cs" />
     <Compile Include="AutoReplier\CChat.cs" />
     <Compile Include="AutoReplier\CChatController.cs" />
+    <Compile Include="AutoReplier\Replier\CMessage.cs" />
     <Compile Include="AutoReplier\Replier\CReplyController.cs" />
+    <Compile Include="AutoReplier\Replier\Replies\CReverser.cs" />
     <Compile Include="AutoReplier\Sequences\CAccessMessages.cs" />
     <Compile Include="AutoReplier\Base\CBaseSequence.cs" />
     <Compile Include="AutoReplier\Sequences\CLogin.cs" />
@@ -68,5 +71,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

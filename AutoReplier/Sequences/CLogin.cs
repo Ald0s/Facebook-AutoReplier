@@ -45,10 +45,20 @@ namespace AutoReplier.Sequences {
             txtEmail.Clear();
             txtEmail.SendKeys(sEmail);
 
-            txtPassword.Clear();
-            txtPassword.SendKeys(sPassword);
+            try {
+                txtPassword.Clear();
+                txtPassword.SendKeys(sPassword);
 
-            btnLogin.Click();
+                btnLogin.Click();
+            } catch (InvalidElementStateException) {
+                btnLogin.Click();
+                WaitForAny(new string[] { sPasswordID });
+
+                txtPassword.Clear();
+                txtPassword.SendKeys(sPassword);
+
+                btnLogin.Click();
+            }
 
             if(!WaitForAny(new string[] { sLoginError, sCheckpointID, sPostTextBox })) {
                 SetSequenceResult(false, "Failed to detect login change. Has the page changed?");

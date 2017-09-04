@@ -9,14 +9,15 @@ using OpenQA.Selenium;
 using System.Collections.ObjectModel;
 
 namespace AutoReplier {
-    public class CChat : CBaseMessageWrapper {
+    public class CChat : CBaseChatWrapper {
         public string FullName { get { return this.sFullName; } }
         public string ID { get { return this.sID; } }
 
         private string sMessageInput = "composerInput";
-        private string sSubmitMessage = "u_x_7";
+        private string sSubmitButton = "u_6_7";
         private string sNameSelector = "._52je._5tg_";
         private string sChatSelector = ".voice.acw.abt";
+
         private IWebElement chat;
 
         private string sFullName;
@@ -53,6 +54,7 @@ namespace AutoReplier {
                 if (messages.Count != 0) {
                     string data_store = messages[0].GetAttribute("data-store");
 
+
                     List<IWebElement> their = new List<IWebElement>();
                     for(int i = 0; i < messages.Count; i++) {
                         if (messages[i].GetAttribute("data-store") != data_store)
@@ -68,6 +70,29 @@ namespace AutoReplier {
             }
 
             return false;
+        }
+
+        // Send a message to this chat.
+        // Function assumes chat has focus.
+        public void SendMessage(string message) {
+            if (!WaitForAny(new string[] { sMessageInput, sSubmitButton })) {
+                WriteError("Error in chat with " + sFullName + ", chat doesn't have focus! We couldn't send the chat message.");
+                return;
+            }
+
+            try {
+                IWebElement input = chrome.FindElement(By.Id(sMessageInput));
+                IWebElement submit = chrome.FindElement(By.Id(sSubmitButton));
+
+                input.SendKeys(message);
+                for(int i = 0; i < 5; i++) {
+                    submit.Click(); // Spam that shiet.
+                }
+            }catch(Exception e) {
+                if(e is StaleElementReferenceException || e is NoSuchElementException) {
+                    WriteError("Error in chat with " + sFullName + ", chat doesn't have focus! We couldn't send the chat message.");
+                }
+            }
         }
 
         private void ProcessMessages(List<IWebElement> messages) {
@@ -93,7 +118,7 @@ namespace AutoReplier {
             // Click onto the chat, then wait.
             chat.Click();
 
-            WaitForAny(new string[] { sSubmitMessage, sMessageInput });
+            WaitForAny(new string[] { sMessageInput });
         }
 
         public bool IsUnread() {

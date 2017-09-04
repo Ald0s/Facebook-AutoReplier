@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 
 namespace AutoReplier.Base {
-    public class CBaseMessageWrapper : CBaseObject {
+    public class CBaseChatWrapper : CBaseObject {
         private string sMessagesSearchID = "messages_search_box";
 
-        public CBaseMessageWrapper(ChromeDriver _driver)
+        public CBaseChatWrapper(ChromeDriver _driver)
             : base(_driver) {
 
         }
